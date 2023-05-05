@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Container, InfoBox, MiniFooter, MiniHeader } from "./styles";
+import { Container, InfoBox, MenuContainer, MiniFooter } from "./styles";
 import arrowDown from "../../../../assets/images/arrowDown.svg";
+
+const MENU_OPTIONS = ["Sobre", "Projetos", "Currículo", "Contato"];
 
 const NamePresentation = () => {
 	const helloList = ["Olá, eu sou", "Hi, I am", "Hola, soy", "Salut, je suis", "Hallo, ich bin", "Ciao, sono", "您好我是"];
@@ -8,6 +10,7 @@ const NamePresentation = () => {
 	let letterCount = 0;
 	let loopCount = 0;
 	const speed = 100;
+	const scrollRef = React.createRef<HTMLDivElement>();
 
 	useEffect(() => {
 
@@ -46,20 +49,47 @@ const NamePresentation = () => {
 
 	}, []);
 
+
+	const onOptionClick = (option: string) => {
+		switch (option) {
+		case "Sobre":
+			window.scrollTo({top: 0, behavior: "smooth"});
+			break;
+		case "Projetos":
+			scrollRef.current?.scrollIntoView({behavior: "smooth"});
+			break;
+		case "Contato":
+			window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+			break;
+		case "Currículo":
+			window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
+			break;
+		default:
+			break;
+		}
+	};
+
 	return (
-		<Container>
-			<MiniHeader>
+		<>
+			<Container>
+				{/* <MiniHeader>
 				<p>BR</p>
-			</MiniHeader>
-			<InfoBox>
-				<h3>{helloText}</h3>
-				<h1>SIMONASSI</h1>
-				<p>Desenvolvedor Full Stack na Radix Engenharia e Software e graduando no último período de Ciência da Computação pela Universidade Federal Fluminense. Atuo em projetos React Native e ReactJS, mas tenho um carinho especial pelo desenvolvimento nativo. Adoro atuar em aplicações que estão em contato direto com o usuário final. Ver minhas soluções contribuindo e impactando a vida das pessoas é extremamente gratificante.Confira meus projetos!</p>
-			</InfoBox>
-			<MiniFooter>
-				<img src={arrowDown} alt="scroll down" />
-			</MiniFooter>
-		</Container>
+			</MiniHeader> */}
+				<InfoBox>
+					<h3>{helloText}</h3>
+					<h1>SIMONASSI</h1>
+					<p>Desenvolvedor Full Stack Pleno na Radix Engenharia e Software e graduando no último período de Ciência da Computação pela Universidade Federal Fluminense. Atuo em projetos React Native e ReactJS, mas tenho um carinho especial pelo desenvolvimento nativo. Adoro atuar em aplicações que estão em contato direto com o usuário final. Ver minhas soluções contribuindo e impactando a vida das pessoas é extremamente gratificante. </p>
+					<br></br>
+					<p>Confira meus projetos!</p>
+				</InfoBox>
+				<MiniFooter>
+					<img src={arrowDown} alt="scroll down" onClick={() => scrollRef.current?.scrollIntoView({behavior: "smooth"})} />
+				</MiniFooter>
+			</Container>
+			<MenuContainer ref={scrollRef}>
+				{MENU_OPTIONS.map((option, index) => (<p key={index} onClick={() => onOptionClick(option)}>{option}</p>))}
+			</MenuContainer>
+		</>
 	);
 };
 

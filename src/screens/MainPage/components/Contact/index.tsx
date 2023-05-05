@@ -2,6 +2,7 @@ import React from "react";
 import { ContactBox, Container, InfoBox } from "./styles";
 import emailLogo from "../../../../assets/images/emailLogo.png";
 import linkedinLogo from "../../../../assets/images/linkedinLogo.png";
+import whatsAppLogo from "../../../../assets/images/whatsAppIcon.png";
 
 const Contact = () => {
 
@@ -20,6 +21,10 @@ const Contact = () => {
 					<ContactBox>
 						<img src={emailLogo} alt="Linkedin" />
 						<p>jsimonassi@id.uff.br</p>
+					</ContactBox>
+					<ContactBox>
+						<img src={whatsAppLogo} alt="Linkedin" />
+						<p>+55 (21) 96675-5666</p>
 					</ContactBox>
 				</InfoBox>
 			</div>

@@ -1,23 +1,25 @@
 import styled from "styled-components";
 import { device } from "../../../../../../assets/styles/deviceSize";
 
-export const Container = styled.div`
+interface InfoBoxProps {
+    leftAlign?: boolean;
+}
+
+export const Container = styled.div<InfoBoxProps>`
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 90%;
     justify-content: space-between;
     margin-top: 2%;
     margin-bottom: 2%;
+    background-color: ${props => props.leftAlign ? "transparent" :  "rgba(0, 0, 0, 0.1)"};
+    padding: 5%;
 
     @media ${device.tablet} {
         flex-direction: column;
     }
 
 `;
-
-interface InfoBoxProps {
-    leftAlign?: boolean;
-}
 
 export const InfoBox = styled.div<InfoBoxProps>`
     display: flex;
@@ -37,6 +39,18 @@ export const InfoBox = styled.div<InfoBoxProps>`
     h2 {
         margin-top: 3%;
         margin-bottom: 2%;
+    }
+
+    @media ${device.tablet} {
+        text-align: left;
+        font-size: 0.9rem;
+        
+
+        div {
+            margin-top: 3%;
+            margin-bottom: 1%;
+        }
+        
     }
 `;
 

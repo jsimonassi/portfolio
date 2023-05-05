@@ -19,3 +19,5 @@ export const device = {
 	desktop: `(max-width: ${size.desktop})`,
 	desktopL: `(max-width: ${size.desktop})`
 };
+
+export const TABLET_WIDTH = 768;

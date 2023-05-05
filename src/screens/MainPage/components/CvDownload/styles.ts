@@ -7,6 +7,7 @@ export const Container = styled.div`
     box-sizing: border-box;
     width: 100%;
     align-items: center;
+    background: linear-gradient( 360deg, #2a342a, #2A2B2A);
 
     h1 {
         color: #fff;
