@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React from "react";
 import { NamePresentation, Projects, Contact } from "./components";
 import { Container } from "./styles";
 import CvDownload from "./components/CvDownload";

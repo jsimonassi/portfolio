@@ -5,7 +5,7 @@ import { ImageLoader } from "../../../../../../components";
 import appStoreButton from "../../../../../../assets/images/appStoreButton.png";
 import playStoreButton from "../../../../../../assets/images/playStoreButton.png";
 import { useWindowDimensions } from "../../../../../../hooks";
-import { TABLET_WIDTH, device } from "../../../../../../assets/styles/deviceSize";
+import { TABLET_WIDTH } from "../../../../../../assets/styles/deviceSize";
 
 interface ProjectItemProps {
 	currentProject: DevProject;
