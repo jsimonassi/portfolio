@@ -78,7 +78,7 @@ const NamePresentation = () => {
 				<InfoBox>
 					<h3>{helloText}</h3>
 					<h1>SIMONASSI</h1>
-					<p>Desenvolvedor Mobile Pleno na Radix Engenharia e Software e graduando de Ciência da Computação pela Universidade Federal Fluminense. Atuo em projetos React Native e ReactJS, mas tenho um carinho especial pelo desenvolvimento nativo. Adoro atuar em aplicações que estão em contato direto com o usuário final. Ver minhas soluções contribuindo e impactando a vida das pessoas é extremamente gratificante. </p>
+					<p>Desenvolvedor Pleno na Radix Engenharia e Software e graduando de Ciência da Computação pela Universidade Federal Fluminense. Atuo em projetos React Native e ReactJS, mas tenho um carinho especial pelo desenvolvimento nativo. Adoro atuar em aplicações que estão em contato direto com o usuário final. Ver minhas soluções contribuindo e impactando a vida das pessoas é extremamente gratificante. </p>
 					<br></br>
 					<p>Confira meus projetos!</p>
 				</InfoBox>
