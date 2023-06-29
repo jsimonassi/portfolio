@@ -53,6 +53,11 @@ const SMART_WEBADMIN_IMAGES = [
 	dashWf
 ];
 
+import loginPage from "../../assets/images/AlunoPresenteDashboard/Login.png";
+const ALUNO_PRESENTE_IMAGES = [
+	loginPage
+];
+
 const CURRENT_PROJECTS = [
 	{
 		title: "Touch Smart",
@@ -90,6 +95,12 @@ const CURRENT_PROJECTS = [
 		title: "Smart WebAdmin - Dashboard",
 		description: "O Smart Webadmin é um dashboard para gerenciamento de apps do grupo Technos. Através do dashboard é possível adicionar mostradores, atualizar FAQs, cadastrar arquivos de firmware para os smartwatches, entre outros recursos relevantes a aplicação.",
 		images: SMART_WEBADMIN_IMAGES,
+		tools: [ "ReactJS", "TypeScript", "StyledComponents", "KeyCloak", "Entre outras ferramentas..."]
+	},
+	{
+		title: "Aluno presente - Portal do professor",
+		description: "O Aluno Presente facilita seu controle de frequência e reúne em um só lugar tudo sobre a participação dos seus alunos.",
+		images: ALUNO_PRESENTE_IMAGES,
 		tools: [ "ReactJS", "TypeScript", "StyledComponents", "KeyCloak", "Entre outras ferramentas..."]
 	},
 ] as DevProject [];
