@@ -1,31 +1,55 @@
 @font-face {
-    font-family: "Light";   /*Can be any text*/
+    font-family: "Light";
+    /*Can be any text*/
     src: local("NotoSans-Light"), url("../fonts/NotoSans/NotoSans-Light.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Medium";   /*Can be any text*/
+    font-family: "Medium";
+    /*Can be any text*/
     src: local("NotoSans-Medium"), url("../fonts/NotoSans/NotoSans-Medium.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Bold";   /*Can be any text*/
+    font-family: "Bold";
+    /*Can be any text*/
     src: local("NotoSans-Bold"), url("../fonts/NotoSans/NotoSans-Bold.ttf") format("truetype");
 }
 
 @font-face {
-    font-family: "Normal";   /*Can be any text*/
+    font-family: "Normal";
+    /*Can be any text*/
     src: local("NotoSerif"), url("../fonts/NotoSerif/NotoSerif.ttf") format("truetype");
 }
-
 
 * {
     margin: 0;
     padding: 0;
 }
 
-body, html {
-    transition: all 0.50s linear;
+body,
+html {
     font-family: "Medium";
     background-color: #2A2B2A;
+
+    /* width */
+    ::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+        display: none;
+    }
+
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+        display: none;
+
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+        display: none;
+    }
 }

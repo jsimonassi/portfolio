@@ -8,10 +8,10 @@ export const Container = styled.div`
     box-sizing: border-box;
     width: 100%;
     align-items: center;
-    background-color: #000;
+    background-color: ${props => props.theme.palette.surface3};
 
     > h1 {
-        color: #fff;
+        color: ${props => props.theme.palette.textAndIcons1};
         margin-bottom: 3%;
         font-size: 3rem;
         text-align: left;
@@ -54,15 +54,15 @@ export const InfoBox = styled.div`
     padding: 1%;
     width: 100%;
     text-align: left;
-    color: #fff;
+    color:  ${props => props.theme.palette.textAndIcons1};
     margin-left: 3%;
 
     h1 {
-       color: #fff;
+       color: ${props => props.theme.palette.textAndIcons1};
     }
 
     p {
-        color: #fff;
+        color: ${props => props.theme.palette.textAndIcons1};
     }
 
     @media ${device.mobileL} {
@@ -91,7 +91,7 @@ export const ContactBox = styled.div`
     }
 
     a {
-        color: #fff;
+        color: ${props => props.theme.palette.textAndIcons1};
         text-decoration: none;
     }
 `;

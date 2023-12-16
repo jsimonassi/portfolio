@@ -5,11 +5,11 @@ export const Container = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #fff;
+    background-color: ${props => props.theme.palette.textAndIcons1};
     height: 50px;
     width: 200px;
     
-    color: #000;
+    color: ${props => props.theme.palette.surface3};
     border-radius: 16px;
     font-weight: bold;
 

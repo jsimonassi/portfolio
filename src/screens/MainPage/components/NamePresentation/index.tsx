@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Container, InfoBox, MenuContainer, MiniFooter } from "./styles";
-import arrowDown from "../../../../assets/images/arrowDown.svg";
-
-const MENU_OPTIONS = ["Sobre", "Projetos", "Currículo", "Contato"];
+import { Container, InfoBox } from "./styles";
 
 const NamePresentation = () => {
 	const helloList = ["Olá, eu sou", "Hi, I am", "Hola, soy", "Salut, je suis", "Hallo, ich bin", "Ciao, sono", "您好我是"];
@@ -10,9 +7,10 @@ const NamePresentation = () => {
 	let letterCount = 0;
 	let loopCount = 0;
 	const speed = 100;
-	const scrollRef = React.createRef<HTMLDivElement>();
 
 	useEffect(() => {
+
+		const timeoutRef: NodeJS.Timeout[] = [];
 
 		const finishCallback = () => {
 			if (loopCount < helloList.length) {
@@ -29,9 +27,9 @@ const NamePresentation = () => {
 			if (letterCount < text.length) {
 				setHelloText(text.substring(0, letterCount + 1));
 				letterCount++;
-				setTimeout(() => typeWriter(text), speed);
+				timeoutRef.push(setTimeout(() => typeWriter(text), speed));
 			} else {
-				setTimeout(() => reverseTypeWriter(text), speed + 400);
+				timeoutRef.push(setTimeout(() => reverseTypeWriter(text), speed + 400));
 			}
 		};
 
@@ -39,7 +37,7 @@ const NamePresentation = () => {
 			if (letterCount > 0) {
 				setHelloText(text.substring(0, letterCount - 1));
 				letterCount--;
-				setTimeout(() => reverseTypeWriter(text), speed);
+				timeoutRef.push(setTimeout(() => reverseTypeWriter(text), speed));
 			} else {
 				finishCallback();
 			}
@@ -47,34 +45,15 @@ const NamePresentation = () => {
 
 		finishCallback();
 
+		return () => {
+			timeoutRef.forEach((timeout) => clearTimeout(timeout));
+		};
+
 	}, []);
-
-
-	const onOptionClick = (option: string) => {
-		switch (option) {
-		case "Sobre":
-			window.scrollTo({top: 0, behavior: "smooth"});
-			break;
-		case "Projetos":
-			scrollRef.current?.scrollIntoView({behavior: "smooth"});
-			break;
-		case "Contato":
-			window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
-			break;
-		case "Currículo":
-			window.scrollTo({top: document.body.scrollHeight, behavior: "smooth"});
-			break;
-		default:
-			break;
-		}
-	};
 
 	return (
 		<>
 			<Container>
-				{/* <MiniHeader>
-				<p>BR</p>
-			</MiniHeader> */}
 				<InfoBox>
 					<h3>{helloText}</h3>
 					<h1>SIMONASSI</h1>
@@ -82,13 +61,7 @@ const NamePresentation = () => {
 					<br></br>
 					<p>Confira meus projetos!</p>
 				</InfoBox>
-				<MiniFooter>
-					<img src={arrowDown} alt="scroll down" onClick={() => scrollRef.current?.scrollIntoView({behavior: "smooth"})} />
-				</MiniFooter>
 			</Container>
-			<MenuContainer ref={scrollRef}>
-				{MENU_OPTIONS.map((option, index) => (<p key={index} onClick={() => onOptionClick(option)}>{option}</p>))}
-			</MenuContainer>
 		</>
 	);
 };

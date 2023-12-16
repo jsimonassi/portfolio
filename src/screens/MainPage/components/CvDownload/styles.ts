@@ -7,10 +7,10 @@ export const Container = styled.div`
     box-sizing: border-box;
     width: 100%;
     align-items: center;
-    background: linear-gradient( 360deg, #2a342a, #2A2B2A);
+    background: linear-gradient( 360deg,  ${props => props.theme.palette.primaryColor},  ${props => props.theme.palette.secondaryColor});
 
     h1 {
-        color: #fff;
+        color: ${props => props.theme.palette.textAndIcons1};
         margin-bottom: 3%;
         font-size: 3rem;
         text-align: left;
@@ -18,7 +18,7 @@ export const Container = styled.div`
     }
 
     p {
-        color: #fff;
+        color: ${props => props.theme.palette.textAndIcons1};
         text-align: left;
         width: 100%;
         margin-bottom: 5%;

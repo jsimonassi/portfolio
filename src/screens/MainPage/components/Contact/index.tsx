@@ -1,8 +1,8 @@
 import React from "react";
 import { ContactBox, Container, InfoBox } from "./styles";
-import emailLogo from "../../../../assets/images/emailLogo.png";
-import linkedinLogo from "../../../../assets/images/linkedinLogo.png";
-import whatsAppLogo from "../../../../assets/images/whatsAppIcon.png";
+// import emailLogo from "../../../../assets/images/emailLogo.png";
+// import linkedinLogo from "../../../../assets/images/linkedinLogo.png";
+// import whatsAppLogo from "../../../../assets/images/whatsAppIcon.png";
 
 const Contact = () => {
 
@@ -15,15 +15,15 @@ const Contact = () => {
 					<h1>João Victor Simonassi</h1>
 					<h3>Entre em contato pelo Linkedin ou E-mail:</h3>
 					<ContactBox>
-						<img src={linkedinLogo} alt="Linkedin" />
+						{/* <img src={linkedinLogo} alt="Linkedin" /> */}
 						<a href="https://br.linkedin.com/in/jsimonassi">linkedin.com/in/jsimonassi</a>
 					</ContactBox>
 					<ContactBox>
-						<img src={emailLogo} alt="Linkedin" />
+						{/* <img src={emailLogo} alt="Linkedin" /> */}
 						<p>jsimonassi@id.uff.br</p>
 					</ContactBox>
 					<ContactBox>
-						<img src={whatsAppLogo} alt="Linkedin" />
+						{/* <img src={whatsAppLogo} alt="Linkedin" /> */}
 						<p>+55 (21) 96675-5666</p>
 					</ContactBox>
 				</InfoBox>

@@ -20,12 +20,12 @@ export const Container = styled.div`
     justify-content: space-between;
     width: 100vw;
     height: 100vh;
-    background: conic-gradient(from 3.1416rad at 10% 50%, #243723, #2A2B2A);
+    background: conic-gradient(from 270deg at 10% 50%, ${props => props.theme.palette.primaryColor}, ${props => props.theme.palette.secondaryColor});
     background-size: 102% 100%;
     animation: ${colors} 15s ease infinite;
 
     @media ${device.mobileL} {
-        background: conic-gradient(from 120deg at 20% 10%, #243723, #2A2B2A);
+        background: conic-gradient(from 120deg at 20% 10%, ${props => props.theme.palette.primaryColor}, ${props => props.theme.palette.secondaryColor});
     }
 `;
 
@@ -38,10 +38,11 @@ export const InfoBox = styled.div`
     padding-left: 20%;
     padding-right: 30%;
     box-sizing: border-box;
+    color: ${props => props.theme.palette.textAndIcons1};
+
 
     h1 {
         font-size: 5rem;
-        color: #fff;
         transition: 0.5s;
 
         &:hover {
@@ -52,7 +53,6 @@ export const InfoBox = styled.div`
 
     h3 {
         font-size: 2.5rem;
-        color: #fff;
         font-weight: 400;
         transition: 0.5s;
         height: 45px;
@@ -62,10 +62,6 @@ export const InfoBox = styled.div`
             font-size: 2.8rem;
             transition: 0.5s;
         }
-    }
-
-    p{
-        color: #fff;
     }
 
     @media ${device.tablet} {
@@ -101,7 +97,7 @@ export const MiniHeader = styled.div`
     box-sizing: border-box;
 
     p {
-        color: #fff;
+        color: ${props => props.theme.palette.textAndIcons1};
 
         &:hover {
             cursor: pointer;
@@ -110,45 +106,3 @@ export const MiniHeader = styled.div`
     }
 `;
 
-export const MiniFooter = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 25px;
-
-    &:hover {
-        cursor: pointer;
-        opacity: 0.5;
-    }
-
-    img {
-        max-width: 40px;
-    }
-`;
-
-
-
-export const MenuContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    background-color: #000;
-    height: 80px;
-    align-items: center;
-    width: 100%;
-
-    p {
-        color: #fff;
-
-        &:hover {
-            cursor: pointer;
-            opacity: 0.5;
-        }
-    }
-
-    @media ${device.mobileL} {
-        flex-direction: column;
-        height: 200px;
-    }
-`;

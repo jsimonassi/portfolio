@@ -27,7 +27,7 @@ export const InfoBox = styled.div<InfoBoxProps>`
     padding: 3%;
     width: 100%;
     text-align: ${props => props.leftAlign ? "left" : "right"};
-    color: #fff;
+    color: ${props => props.theme.palette.textAndIcons1};
     font-family: "light";
     justify-content: space-evenly;
 

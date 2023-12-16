@@ -1,4 +1,5 @@
 import MainButton from "./MainButton";
 import ImageLoader from "./ImageLoader";
+import Header from "./Header";
 
-export { MainButton, ImageLoader };
+export { MainButton, ImageLoader, Header };

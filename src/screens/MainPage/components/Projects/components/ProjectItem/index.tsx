@@ -2,8 +2,8 @@ import React from "react";
 import { DevProject } from "../../../../../../types/DevProject";
 import { Container, InfoBox, StoreButtonGroup } from "./styles";
 import { ImageLoader } from "../../../../../../components";
-import appStoreButton from "../../../../../../assets/images/appStoreButton.png";
-import playStoreButton from "../../../../../../assets/images/playStoreButton.png";
+// import appStoreButton from "../../../../../../assets/images/appStoreButton.png";
+// import playStoreButton from "../../../../../../assets/images/playStoreButton.png";
 import { useWindowDimensions } from "../../../../../../hooks";
 import { TABLET_WIDTH } from "../../../../../../assets/styles/deviceSize";
 
@@ -28,8 +28,8 @@ const ProjectItem = (props: ProjectItemProps) => {
 						{props.currentProject.images && <ImageLoader images={props.currentProject.images} />}
 					</div>
 					<StoreButtonGroup>
-						{props.currentProject.playStoreLink && <img src={playStoreButton} alt={"play Store Button"} onClick={() => window.location.href = props.currentProject.playStoreLink ?? ""} />}
-						{props.currentProject.appStoreLink && <img src={appStoreButton} alt={"App Store Button"} onClick={() => window.location.href = props.currentProject.appStoreLink ?? ""} />}
+						{/* {props.currentProject.playStoreLink && <img src={playStoreButton} alt={"play Store Button"} onClick={() => window.location.href = props.currentProject.playStoreLink ?? ""} />} */}
+						{/* {props.currentProject.appStoreLink && <img src={appStoreButton} alt={"App Store Button"} onClick={() => window.location.href = props.currentProject.appStoreLink ?? ""} />} */}
 					</StoreButtonGroup>
 				</InfoBox>
 			</Container>
@@ -45,8 +45,8 @@ const ProjectItem = (props: ProjectItemProps) => {
 				<h2>Tecnologias utilizadas:</h2>
 				{props.currentProject.tools && props.currentProject.tools.map((item, index) => (<span key={index}>- {item}</span>))}
 				<StoreButtonGroup>
-					{props.currentProject.playStoreLink && <img src={playStoreButton} alt={"play Store Button"} onClick={() => window.location.href = props.currentProject.playStoreLink ?? ""} />}
-					{props.currentProject.appStoreLink && <img src={appStoreButton} alt={"App Store Button"} onClick={() => window.location.href = props.currentProject.appStoreLink ?? ""} />}
+					{/* {props.currentProject.playStoreLink && <img src={playStoreButton} alt={"play Store Button"} onClick={() => window.location.href = props.currentProject.playStoreLink ?? ""} />} */}
+					{/* {props.currentProject.appStoreLink && <img src={appStoreButton} alt={"App Store Button"} onClick={() => window.location.href = props.currentProject.appStoreLink ?? ""} />} */}
 				</StoreButtonGroup>
 			</InfoBox>
 			{props.currentProject.images && !props.leftImage && <ImageLoader images={props.currentProject.images} />}
