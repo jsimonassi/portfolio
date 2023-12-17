@@ -1,15 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { MenuContainer } from "./styles";
+import { HamburguerContainer, RightImageStyled, Logo, MenuContainer, RowView, HamburguerContent } from "./styles";
 import { AVAILABLE_HEADER_OPTIONS } from "../../constants/headerOptions";
+import logo from "../../assets/images/logo.png";
+import brFlag from "../../assets/images/ptbr.png";
+import hamburguerIcon from "../../assets/images/hamburguerIcon.png";
+import { useWindowDimensions } from "../../hooks";
+import { TABLET_WIDTH } from "../../assets/styles/deviceSize";
 
 interface HeaderProps {
-    scrollRef: React.RefObject<HTMLDivElement>;
-    onOptionClick: (option: string) => void;
+	scrollRef: React.RefObject<HTMLDivElement>;
+	onOptionClick: (option: string) => void;
 }
 
 const Header = (props: HeaderProps) => {
 
 	const [opacity, setOpacity] = useState(0);
+	const dimensions = useWindowDimensions();
+	const [hambuguerOpen, setHamburguerOpen] = useState(false);
 
 	useEffect(() => {
 		const onScroll = () => {
@@ -22,9 +29,29 @@ const Header = (props: HeaderProps) => {
 		return () => window.removeEventListener("scroll", onScroll);
 	}, []);
 
+	if (dimensions.width < TABLET_WIDTH) {
+		return (
+			<HamburguerContainer ref={props.scrollRef} opacity={opacity} >
+				<RowView>
+					<Logo src={logo} alt="Logo" />
+					<RightImageStyled src={hamburguerIcon} alt="language" onClick={() => setHamburguerOpen(previous => !previous)} />
+				</RowView>
+
+				{<HamburguerContent isOpen={hambuguerOpen}>
+					{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
+					<RightImageStyled src={brFlag} alt="language" />
+				</HamburguerContent>}
+			</HamburguerContainer>
+		);
+	}
+
 	return (
 		<MenuContainer ref={props.scrollRef} opacity={opacity}>
-			{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
+			<Logo src={logo} alt="Logo" />
+			<div>
+				{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
+			</div>
+			<RightImageStyled src={brFlag} alt="language" />
 		</MenuContainer>
 	);
 };

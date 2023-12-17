@@ -11,5 +11,6 @@ export const darkTheme: DefaultTheme = {
 		surface3: "#222",
 
 		textAndIcons1: "#F4F5FC",
+		textAndIcons2: "#333",
 	}
 };

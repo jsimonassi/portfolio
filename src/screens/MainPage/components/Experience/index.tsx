@@ -2,51 +2,28 @@ import React from "react";
 import { Chrono } from "react-chrono";
 import { useTheme } from "styled-components";
 import { Container } from "./styles";
+import { PT_CURRENT_EXPERIENCES } from "../../../../constants/currentExperiences";
+import { ExperienceItem } from "./components";
 
 
 const Experience = () => {
 
 	const currentTheme = useTheme();
 
-	const items = [
-		{
-			title: "Out/2019 - Jul/2020",
-			cardTitle: "Desenvolvedor Mobile",
-			cardSubtitle: "Colégio La Salle Abel",
-			cardDetailedText: ["Neste empresa atuei no desenvolvimento de aplicativos que apoiam projetos educacionais propostos por professores, bem como no desenvolvimento de novas formas de aprofundamento dos conteúdos estudados em sala de aula.",
-				"Tecnologias: ", "- MVVM", "- Kotlin", "- Java", "- Firebase", "- Git", "- Retrofit", "- Room"],
-		},
-		{
-			title: "Out/2019 - Jul/2020",
-			cardTitle: "Desenvolvedor Mobile",
-			cardSubtitle: "Colégio La Salle Abel",
-			cardDetailedText: ["Neste empresa atuei no desenvolvimento de aplicativos que apoiam projetos educacionais propostos por professores, bem como no desenvolvimento de novas formas de aprofundamento dos conteúdos estudados em sala de aula.",
-				"Tecnologias: ", "- MVVM", "- Kotlin", "- Java", "- Firebase", "- Git", "- Retrofit", "- Room"],
-		},
-		{
-			title: "Out/2019 - Jul/2020",
-			cardTitle: "Desenvolvedor Mobile",
-			cardSubtitle: "Colégio La Salle Abel",
-			cardDetailedText: ["Neste empresa atuei no desenvolvimento de aplicativos que apoiam projetos educacionais propostos por professores, bem como no desenvolvimento de novas formas de aprofundamento dos conteúdos estudados em sala de aula.",
-				"Tecnologias: ", "- MVVM", "- Kotlin", "- Java", "- Firebase", "- Git", "- Retrofit", "- Room"],
-		},
-		{
-			title: "Out/2019 - Jul/2020",
-			cardTitle: "Desenvolvedor Mobile",
-			cardSubtitle: "Colégio La Salle Abel",
-			cardDetailedText: ["Neste empresa atuei no desenvolvimento de aplicativos que apoiam projetos educacionais propostos por professores, bem como no desenvolvimento de novas formas de aprofundamento dos conteúdos estudados em sala de aula.",
-				"Tecnologias: ", "- MVVM", "- Kotlin", "- Java", "- Firebase", "- Git", "- Retrofit", "- Room"],
-		},
-	];
-      
-
 	return (
 		<Container>
 			<h1>Experiência</h1>
 			<Chrono 
-				items={items}
+				items={PT_CURRENT_EXPERIENCES.map((item) => {
+					return {
+						title: item.title,
+						timelineContent: <ExperienceItem currentExperience={item} />
+					};
+				})}
 				mode="VERTICAL_ALTERNATING"
 				mediaSettings={{display: "none"}}
+				cardHeight={"auto"}
+				hideControls
 				theme={{
 					primary: currentTheme.palette.accentColor,
 					secondary: currentTheme.palette.textAndIcons1,
@@ -54,7 +31,7 @@ const Experience = () => {
 					titleColor: currentTheme.palette.accentColor,
 					titleColorActive: currentTheme.palette.surface3,
 				}}
-			/>
+			/>			
 		</Container>
 	);
 };

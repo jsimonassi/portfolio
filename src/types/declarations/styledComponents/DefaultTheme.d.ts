@@ -14,6 +14,7 @@ declare module "styled-components" {
       surface3: string;
 
       textAndIcons1: string;
+      textAndIcons2: string;
     };
   }
 }
