@@ -33,7 +33,7 @@ const Header = (props: HeaderProps) => {
 		return (
 			<HamburguerContainer ref={props.scrollRef} opacity={opacity} >
 				<RowView>
-					<Logo src={logo} alt="Logo" />
+					<Logo src={logo} alt="Logo" onClick={() => props.onOptionClick("home")}/>
 					<RightImageStyled src={hamburguerIcon} alt="language" onClick={() => setHamburguerOpen(previous => !previous)} />
 				</RowView>
 
@@ -47,7 +47,7 @@ const Header = (props: HeaderProps) => {
 
 	return (
 		<MenuContainer ref={props.scrollRef} opacity={opacity}>
-			<Logo src={logo} alt="Logo" />
+			<Logo src={logo} alt="Logo" onClick={() => props.onOptionClick("home")}/>
 			<div>
 				{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
 			</div>

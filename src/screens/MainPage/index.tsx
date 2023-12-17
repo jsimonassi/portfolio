@@ -8,14 +8,43 @@ import Experience from "./components/Experience";
 const MainPage = () => {
 	const scrollRef = React.createRef<HTMLDivElement>();
 
+	const namePresentationRef = React.createRef<HTMLDivElement>();
+	const experienceRef = React.createRef<HTMLDivElement>();
+	const projectsRef = React.createRef<HTMLDivElement>();
+	const cvRef = React.createRef<HTMLDivElement>();
+	const contactRef = React.createRef<HTMLDivElement>();
+
+	const onHeaderOptionClick = (option: string) => {
+		console.log(option);
+		switch (option) {
+		case"home":
+			namePresentationRef.current?.scrollIntoView({behavior: "smooth"});
+			break;
+		case "experience":
+			experienceRef.current?.scrollIntoView({behavior: "smooth"});
+			break;
+		case "projects":
+			projectsRef.current?.scrollIntoView({behavior: "smooth"});
+			break;
+		case "resume":
+			cvRef.current?.scrollIntoView({behavior: "smooth"});
+			break;
+		case "contact":
+			contactRef.current?.scrollIntoView({behavior: "smooth"});
+			break;
+		default:
+			break;
+		}
+	};
+
 	return (
 		<Container >
-			<Header scrollRef={scrollRef} onOptionClick={() => null} />
-			<NamePresentation />
-			<Experience />
-			<Projects />
-			<CvDownload />
-			<Contact />
+			<Header scrollRef={scrollRef} onOptionClick={onHeaderOptionClick} />
+			<div ref={namePresentationRef}><NamePresentation /></div>
+			<div ref={experienceRef}><Experience  /></div>
+			<div ref={projectsRef}><Projects /></div>
+			<div ref={cvRef}><CvDownload /></div>
+			<div ref={contactRef}><Contact/></div>
 		</Container>
 	);
 };
