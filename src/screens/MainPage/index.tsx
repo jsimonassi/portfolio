@@ -40,7 +40,7 @@ const MainPage = () => {
 	return (
 		<Container >
 			<Header scrollRef={scrollRef} onOptionClick={onHeaderOptionClick} />
-			<div ref={namePresentationRef}><NamePresentation /></div>
+			<div ref={namePresentationRef}><NamePresentation onGoProjectsClicked={() => onHeaderOptionClick("projects")} /></div>
 			<div ref={experienceRef}><Experience  /></div>
 			<div ref={projectsRef}><Projects /></div>
 			<div ref={cvRef}><CvDownload /></div>

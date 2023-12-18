@@ -1,13 +1,26 @@
 import React from "react";
-import { Container } from "./styles";
+import { Container, ProjectsContainer } from "./styles";
 import { CURRENT_PROJECTS } from "../../../../constants";
-import { ProjectItem } from "./components";
+import { CardProjectItem } from "./components";
+import { DevProject } from "../../../../types/DevProject";
+import { useNavigate } from "react-router-dom";
+import { ROUTES } from "../../../../constants/routes";
 
 const Projects = () => {
+	const navigate = useNavigate();
+
+	const navigateToProjectView = (selectedProject: DevProject) => {
+		const projectIndex = CURRENT_PROJECTS.indexOf(selectedProject);
+		navigate(ROUTES.PROJECT_VIEW + "/" + projectIndex);
+	};
+
+
 	return (
 		<Container>
 			<h1>Projetos</h1>
-			{CURRENT_PROJECTS.map((item, index) => (<ProjectItem currentProject={item} leftImage={index % 2 === 0} key={index} />))}
+			<ProjectsContainer>
+				{CURRENT_PROJECTS.map((item, index) => (<CardProjectItem key={index} currentProject={item} onClickProject={() => navigateToProjectView(item)}/>))}
+			</ProjectsContainer>
 			<span>Demais projetos pessoais estão disponíveis em: <a href="https://github.com/jsimonassi">github.com/jsimonassi</a></span>
 		</Container>
 	);

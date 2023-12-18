@@ -8,20 +8,21 @@ export const Container = styled.div`
     box-sizing: border-box;
     width: 100%;
     align-items: center;
-    background-color: ${props => props.theme.palette.surface3};
+    background-color: ${props => props.theme.palette.primaryColor};
 
+   
     > h1 {
-        color: ${props => props.theme.palette.textAndIcons1};
         margin-bottom: 3%;
-        font-size: 3rem;
-        text-align: left;
+        font-size: 4rem;
+        text-align: center;
         width: 100%;
+        color: ${props => props.theme.palette.textAndIcons1};
     }
 
     > div {
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         justify-content: center;
         align-items: center;
 
@@ -53,12 +54,13 @@ export const InfoBox = styled.div`
     flex-direction: column;
     padding: 1%;
     width: 100%;
-    text-align: left;
+    text-align: center;
     color:  ${props => props.theme.palette.textAndIcons1};
     margin-left: 3%;
 
     h1 {
        color: ${props => props.theme.palette.textAndIcons1};
+       margin-bottom: 20px;
     }
 
     p {
@@ -80,9 +82,10 @@ export const InfoBox = styled.div`
 export const ContactBox = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: center;
     margin-top: 1%;
+    text-align: center;
 
     img {
         max-width: 40px;

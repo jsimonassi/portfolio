@@ -29,3 +29,15 @@ export const Container = styled.div`
         text-align: center;
     }
 `;
+
+export const ProjectsContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 3%;
+    margin-bottom: 5%;
+    max-width: 1500px;
+`;

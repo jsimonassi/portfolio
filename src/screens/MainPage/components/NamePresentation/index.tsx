@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Container, InfoBox } from "./styles";
+import { MainButton } from "../../../../components";
 
-const NamePresentation = () => {
+interface NamePresentationProps {
+	onGoProjectsClicked: () => void;
+}
+
+const NamePresentation = ({onGoProjectsClicked}: NamePresentationProps) => {
 	const helloList = ["Olá, eu sou", "Hi, I am", "Hola, soy", "Salut, je suis", "Hallo, ich bin", "Ciao, sono", "您好我是"];
 	const [helloText, setHelloText] = useState<string>("");
 	let letterCount = 0;
@@ -57,9 +62,10 @@ const NamePresentation = () => {
 				<InfoBox>
 					<h3>{helloText}</h3>
 					<h1>SIMONASSI</h1>
-					<p>Desenvolvedor Pleno na Radix Engenharia e Software e graduando de Ciência da Computação pela Universidade Federal Fluminense. Atuo em projetos React Native e ReactJS, mas tenho um carinho especial pelo desenvolvimento nativo. Adoro atuar em aplicações que estão em contato direto com o usuário final. Ver minhas soluções contribuindo e impactando a vida das pessoas é extremamente gratificante. </p>
+					<p>Desenvolvedor Pleno na Radix Engenharia e Software e formado em Ciência da Computação pela Universidade Federal Fluminense. Atuo em projetos React Native, ReactJS e apps Android Nativo. Adoro atuar em aplicações que estão em contato direto com o usuário final. Ver minhas soluções contribuindo e impactando a vida das pessoas é extremamente gratificante. </p>
 					<br></br>
-					<p>Confira meus projetos!</p>
+					{/* <p></p> */}
+					<MainButton onClick={onGoProjectsClicked} text="Confira meus projetos!"/>
 				</InfoBox>
 			</Container>
 		</>

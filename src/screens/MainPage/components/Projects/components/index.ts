@@ -1,5 +1,5 @@
-import ProjectItem from "./ProjectItem";
+import CardProjectItem from "./CardProjectItem";
 
 export {
-	ProjectItem
+	CardProjectItem
 };
