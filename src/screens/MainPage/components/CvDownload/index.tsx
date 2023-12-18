@@ -2,7 +2,7 @@ import React from "react";
 import { Container } from "./styles";
 import { MainButton } from "../../../../components";
 
-const CV_URL = "./cv2023.2.pdf";
+const CV_URL = "./JoaoVictorSimonassi-2023.2.pdf";
 
 const CvDownload = () => {
 	return (

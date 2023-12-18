@@ -23,6 +23,10 @@ export const Container = styled.div`
     }
 `;
 
+interface AppTypeProps {
+    isMobile: boolean;
+}
+
 export const PreviewContainer = styled.div `
     display: flex;
     width: 100%;
@@ -37,14 +41,15 @@ export const ImgCover = styled.img`
     position: absolute;
 `;
 
-export const ImgContent = styled.img`
-    height: 600px;
-    width: 300px;
+export const ImgContent = styled.img<AppTypeProps>`
+    height: ${props => props.isMobile ? "600px" : "auto"};
+    max-height: 600px;
+    width: ${props => props.isMobile ? "300px" : "80%"};
     position: absolute;
     border-radius: 30px;
     padding: 10px;
     box-sizing: border-box;
-    object-fit: cover;
+    object-fit: ${props => props.isMobile ? "cover" : "contain"};
     object-position: top;
 `;
 

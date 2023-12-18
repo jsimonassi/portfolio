@@ -11,7 +11,7 @@ const Projects = () => {
 
 	const navigateToProjectView = (selectedProject: DevProject) => {
 		const projectIndex = CURRENT_PROJECTS.indexOf(selectedProject);
-		navigate(ROUTES.PROJECT_VIEW + "/" + projectIndex);
+		navigate("/" + ROUTES.PROJECT_VIEW + "/" + projectIndex, { replace: true });
 	};
 
 

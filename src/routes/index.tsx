@@ -12,6 +12,7 @@ const MainRouter = () => {
 	return (
 		<Router>
 			<Routes>
+				<Route path={`/${ROUTES.HOME}/:option`} element={<MainPage />} />
 				<Route path={ROUTES.HOME} element={<MainPage />} />
 				<Route path={`/${ROUTES.PROJECT_VIEW}/:id`}  element={<ProjectViewPage />} />
 			</Routes>
