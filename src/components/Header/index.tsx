@@ -3,9 +3,11 @@ import { HamburguerContainer, RightImageStyled, Logo, MenuContainer, RowView, Ha
 import { AVAILABLE_HEADER_OPTIONS } from "../../constants/headerOptions";
 import logo from "../../assets/images/logo.png";
 import brFlag from "../../assets/images/ptbr.png";
+import usaFlag from "../../assets/images/usa.png";
 import hamburguerIcon from "../../assets/images/hamburguerIcon.png";
 import { useWindowDimensions } from "../../hooks";
 import { TABLET_WIDTH } from "../../assets/styles/deviceSize";
+import { useLanguage } from "../../contexts/language";
 
 interface HeaderProps {
 	scrollRef: React.RefObject<HTMLDivElement>;
@@ -16,6 +18,7 @@ const Header = (props: HeaderProps) => {
 
 	const [opacity, setOpacity] = useState(0);
 	const dimensions = useWindowDimensions();
+	const {currentLanguage, changeLanguage} = useLanguage();
 	const [hambuguerOpen, setHamburguerOpen] = useState(false);
 
 	useEffect(() => {
@@ -39,7 +42,7 @@ const Header = (props: HeaderProps) => {
 
 				{<HamburguerContent isOpen={hambuguerOpen}>
 					{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
-					<RightImageStyled src={brFlag} alt="language" />
+					<RightImageStyled src={ currentLanguage === "pt" ? brFlag : usaFlag } alt="language" onClick={() => changeLanguage()} />
 				</HamburguerContent>}
 			</HamburguerContainer>
 		);
@@ -51,7 +54,7 @@ const Header = (props: HeaderProps) => {
 			<div>
 				{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
 			</div>
-			<RightImageStyled src={brFlag} alt="language" />
+			<RightImageStyled src={ currentLanguage === "pt" ? brFlag : usaFlag } alt="language" onClick={() => changeLanguage()} />
 		</MenuContainer>
 	);
 };
