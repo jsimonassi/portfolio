@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Container, InfoBox } from "./styles";
 import { MainButton } from "../../../../components";
+import { useLanguage } from "../../../../contexts/language";
 
 interface NamePresentationProps {
 	onGoProjectsClicked: () => void;
@@ -9,6 +10,7 @@ interface NamePresentationProps {
 const NamePresentation = ({onGoProjectsClicked}: NamePresentationProps) => {
 	const helloList = ["Olá, eu sou", "Hi, I am", "Hola, soy", "Salut, je suis", "Hallo, ich bin", "Ciao, sono", "您好我是"];
 	const [helloText, setHelloText] = useState<string>("");
+	const { getString } = useLanguage();
 	let letterCount = 0;
 	let loopCount = 0;
 	const speed = 100;
@@ -62,10 +64,9 @@ const NamePresentation = ({onGoProjectsClicked}: NamePresentationProps) => {
 				<InfoBox>
 					<h3>{helloText}</h3>
 					<h1>SIMONASSI</h1>
-					<p>Desenvolvedor Pleno na Radix Engenharia e Software e formado em Ciência da Computação pela Universidade Federal Fluminense. Atuo em projetos React Native, ReactJS e apps Android Nativo. Adoro atuar em aplicações que estão em contato direto com o usuário final. Ver minhas soluções contribuindo e impactando a vida das pessoas é extremamente gratificante. </p>
+					<p>{getString("about")}</p>
 					<br></br>
-					{/* <p></p> */}
-					<MainButton onClick={onGoProjectsClicked} text="Confira meus projetos!"/>
+					<MainButton onClick={onGoProjectsClicked} text={getString("showMyProjects")}/>
 				</InfoBox>
 			</Container>
 		</>

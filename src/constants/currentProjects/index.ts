@@ -82,7 +82,7 @@ const ALUNO_PRESENTE_IMAGES = [
 	homePage
 ];
 
-const CURRENT_PROJECTS: DevProject[] = [
+export const PT_CURRENT_PROJECTS: DevProject[] = [
 	{
 		title: "Mormaii Smartwatches",
 		smallDescription: "App React Native",
@@ -147,4 +147,67 @@ const CURRENT_PROJECTS: DevProject[] = [
 	},
 ];
 
-export default CURRENT_PROJECTS;
+export const EN_CURRENT_PROJECTS: DevProject[] = [
+	{
+		title: "Mormaii Smartwatches",
+		smallDescription: "React Native App",
+		description: "Mormaii Smartwatches is your app to get the most out of your connected Mormaii products. With it, you can check your daily activity data, such as step count, calories, heart rate monitoring, and many other information.",
+		appStoreLink: "https://apps.apple.com/br/app/mormaii-smartwatches/id1502184388",
+		playStoreLink: "https://play.google.com/store/apps/details?id=br.com.grupotechnos.mormaiismartwatches&hl=pt_BR&gl=US&pli=1",
+		images: MORMAII_IMAGES,
+		tools: [ "React Native", "TypeScript", "StyledComponents", "ContextApi", "Java - Android x Smartwatch Communication", "Objective-C - iOS x Smartwatch Communication", "Among other tools..."],
+		logo: mormaiiLogo,
+		appType: "Mobile"
+	},
+	{
+		title: "Technos Connect",
+		smallDescription: "React Native App",
+		description: "Technos Connect is an app made for lovers of the classic with a sporty touch and offers a range of features that make your life easier. It combines all the sophistication and quality of Technos products with technological innovation and sophisticated design. There are over 20 features available in your smartwatches compatible with the App!",
+		appStoreLink: "https://apps.apple.com/br/app/technos-connect/id1566030333",
+		playStoreLink: "https://play.google.com/store/apps/details?id=br.com.grupotechnos.technosconnect",
+		images: TECHNOS_IMAGES,
+		tools: [ "React Native", "JavaScript", "ContextApi", "Java - Android x Smartwatch Communication", "Objective-C - iOS x Smartwatch Communication", "Among other tools..."],
+		logo: technosLogo,
+		appType: "Mobile"
+	},
+	{
+		title: "Touch Smart",
+		smallDescription: "React Native App",
+		description: "The Touch Smart app is your partner for everyday life! In a few steps, you connect your Touch Smartwatch and have access to features about your routine, workouts and health, such as call notifications, messages and social networks; +8 sports; heart rate, steps, calories and distance control; relaxation mode; and sleep control.",
+		appStoreLink: "https://apps.apple.com/br/app/touch-smart/id1634658975",
+		playStoreLink: "https://play.google.com/store/apps/details?id=br.com.grupotechnos.touchsmart",
+		images: TOUCH_SMART_IMAGES,
+		tools: [ "React Native", "JavaScript", "ContextApi", "Java - Android x Smartwatch Communication", "Objective-C - iOS x Smartwatch Communication", "Among other tools..."],
+		logo: touchLogo,
+		appType: "Mobile"
+	},
+	{
+		title: "Smart WebAdmin - Dashboard",
+		smallDescription: "ReactJs App",
+		description: "Smart Webadmin is a dashboard for managing Technos group apps. Through the dashboard it is possible to add dials, update FAQs, register firmware files for smartwatches, among other relevant application features.",
+		images: SMART_WEBADMIN_IMAGES,
+		tools: [ "ReactJS", "TypeScript", "StyledComponents", "KeyCloak", "Among other tools..."],
+		logo: technosDashboardLogo,
+		appType: "Web"
+	},
+	{
+		title: "Vlt Carioca",
+		smallDescription: "Native Android App",
+		description: "With the official VLT Carioca app you will plan your trip, know the forecast of arrival of the compositions, recharge your RioCard and inform yourself about the use of the VLT and the tourist attractions around the stops and stations.",
+		appStoreLink: "https://apps.apple.com/br/app/vlt-carioca/id1317788967",
+		playStoreLink: "https://play.google.com/store/apps/details?id=br.com.vltrio.vltcarioca",
+		images: VLT_CARIOCA_IMAGES,
+		tools: [ "Kotlin", "MVVM", "LiveData", "Room Database", "FusedLocationProvider", "Among other tools..."],
+		logo: vltLogo,
+		appType: "Mobile"
+	},
+	{
+		title: "Aluno Presente",
+		smallDescription: "React Native App",
+		description: "Aluno Presente makes it easy for you to control attendance and brings together in one place everything about your students' participation.",
+		images: ALUNO_PRESENTE_IMAGES,
+		tools: [ "React Native", "TypeScript", "OpenID Connect - OAuth 2.0", "ContextApi", "WebSockets", "Among other tools..."],
+		logo: alunoPresenteLogo,
+		appType: "Mobile"
+	},
+];

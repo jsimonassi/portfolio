@@ -18,7 +18,7 @@ const Header = (props: HeaderProps) => {
 
 	const [opacity, setOpacity] = useState(0);
 	const dimensions = useWindowDimensions();
-	const {currentLanguage, changeLanguage} = useLanguage();
+	const {currentLanguage, changeLanguage, getString} = useLanguage();
 	const [hambuguerOpen, setHamburguerOpen] = useState(false);
 
 	useEffect(() => {
@@ -41,7 +41,7 @@ const Header = (props: HeaderProps) => {
 				</RowView>
 
 				{<HamburguerContent isOpen={hambuguerOpen}>
-					{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
+					{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{getString(AVAILABLE_HEADER_OPTIONS[option].key)}</p>))}
 					<RightImageStyled src={ currentLanguage === "pt" ? brFlag : usaFlag } alt="language" onClick={() => changeLanguage()} />
 				</HamburguerContent>}
 			</HamburguerContainer>
@@ -52,7 +52,7 @@ const Header = (props: HeaderProps) => {
 		<MenuContainer ref={props.scrollRef} opacity={opacity}>
 			<Logo src={logo} alt="Logo" onClick={() => props.onOptionClick("home")}/>
 			<div>
-				{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{AVAILABLE_HEADER_OPTIONS[option].name}</p>))}
+				{Object.keys(AVAILABLE_HEADER_OPTIONS).map((option, index) => (<p key={index} onClick={() => props.onOptionClick(option)}>{getString(AVAILABLE_HEADER_OPTIONS[option].key)}</p>))}
 			</div>
 			<RightImageStyled src={ currentLanguage === "pt" ? brFlag : usaFlag } alt="language" onClick={() => changeLanguage()} />
 		</MenuContainer>

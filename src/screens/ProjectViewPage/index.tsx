@@ -1,17 +1,24 @@
-import React, { createRef, useEffect, useState } from "react";
+import React, { createRef, useEffect, useMemo, useState } from "react";
 import { Container, Content, ImgContent, ImgCover, PreviewContainer } from "./styles";
 import { Header } from "../../components";
 import { useNavigate, useParams } from "react-router-dom";
 import { DevProject } from "../../types/DevProject";
-import { CURRENT_PROJECTS } from "../../constants";
+import { EN_CURRENT_PROJECTS, PT_CURRENT_PROJECTS } from "../../constants";
 import mobileCover from "../../assets/images/mobileCover.png";
+import { useLanguage } from "../../contexts/language";
 
 
 const ProjectViewPage = () => {
 	const scrollRef = createRef<HTMLDivElement>();
 	const { id } = useParams();
+	const { currentLanguage } = useLanguage();
 	const navigate = useNavigate();
-	const currentProject: DevProject = CURRENT_PROJECTS[id ?? 0];
+	const currentProject: DevProject = useMemo(() => {
+		if(currentLanguage === "pt") {
+			return PT_CURRENT_PROJECTS[id ?? 0];
+		}
+		return EN_CURRENT_PROJECTS[id ?? 0];
+	}, [currentLanguage]);
 	const [currentImageIndex, setCurrentImage] = useState(0);
 
 	const onHeaderOptionClick = (option: string) => {

@@ -1,3 +1,3 @@
-import CURRENT_PROJECTS from "./currentProjects";
+import {PT_CURRENT_PROJECTS, EN_CURRENT_PROJECTS} from "./currentProjects";
 
-export { CURRENT_PROJECTS };
+export { PT_CURRENT_PROJECTS, EN_CURRENT_PROJECTS };
