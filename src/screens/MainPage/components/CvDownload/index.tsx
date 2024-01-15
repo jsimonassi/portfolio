@@ -3,7 +3,7 @@ import { Container } from "./styles";
 import { MainButton } from "../../../../components";
 import { useLanguage } from "../../../../contexts/language";
 
-const CV_URL = "./JoaoVictorSimonassi-2023.2.pdf";
+const CV_URL = "./JoaoVictorSimonassi-2024.pdf";
 
 const CvDownload = () => {
 
