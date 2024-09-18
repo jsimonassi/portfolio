@@ -1,6 +1,8 @@
 import React from "react";
 import { ContactBox, Container, InfoBox } from "./styles";
 import { useLanguage } from "../../../../contexts/language";
+import linkedinLogo from "../../../../assets/images/linkedinLogo.png";
+// import emailLogo from "../../../../assets/email.png";
 
 const Contact = () => {
 

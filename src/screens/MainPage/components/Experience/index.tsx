@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Chrono } from "react-chrono";
 import { useTheme } from "styled-components";
 import { Container } from "./styles";

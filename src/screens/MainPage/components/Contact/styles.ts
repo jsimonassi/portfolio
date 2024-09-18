@@ -56,7 +56,6 @@ export const InfoBox = styled.div`
     width: 100%;
     text-align: center;
     color:  ${props => props.theme.palette.textAndIcons1};
-    margin-left: 3%;
 
     h1 {
        color: ${props => props.theme.palette.textAndIcons1};
