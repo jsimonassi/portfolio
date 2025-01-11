@@ -106,3 +106,21 @@ export const MiniHeader = styled.div`
     }
 `;
 
+export const MainButtonInfoContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 16px;
+
+    img {
+        width: 50px;
+        transition: 0.5s;
+
+        &:hover {
+            cursor: pointer;
+            opacity: 0.5;
+            transition: 0.5s;
+        }
+    }
+`;
+

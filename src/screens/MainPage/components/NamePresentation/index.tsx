@@ -1,13 +1,15 @@
 import React, { useEffect, useState } from "react";
-import { Container, InfoBox } from "./styles";
+import { Container, InfoBox, MainButtonInfoContainer } from "./styles";
 import { MainButton } from "../../../../components";
 import { useLanguage } from "../../../../contexts/language";
+import linkedinLogo from "../../../../assets/images/linkedinLogo.png";
+import { LINKEDIN_URL } from "../../../../constants/ContactInfos";
 
 interface NamePresentationProps {
 	onGoProjectsClicked: () => void;
 }
 
-const NamePresentation = ({onGoProjectsClicked}: NamePresentationProps) => {
+const NamePresentation = ({ onGoProjectsClicked }: NamePresentationProps) => {
 	const helloList = ["Olá, eu sou", "Hi, I am", "Hola, soy", "Salut, je suis", "Hallo, ich bin", "Ciao, sono", "您好我是"];
 	const [helloText, setHelloText] = useState<string>("");
 	const { getString } = useLanguage();
@@ -66,7 +68,14 @@ const NamePresentation = ({onGoProjectsClicked}: NamePresentationProps) => {
 					<h1>SIMONASSI</h1>
 					<p>{getString("about")}</p>
 					<br></br>
-					<MainButton onClick={onGoProjectsClicked} text={getString("showMyProjects")}/>
+					<MainButtonInfoContainer>
+						<MainButton onClick={onGoProjectsClicked} text={getString("showMyProjects")} />
+						<img
+							src={linkedinLogo}
+							alt="linkedin"
+							onClick={() => window.open(LINKEDIN_URL, "_blank")}
+						/>
+					</MainButtonInfoContainer>
 				</InfoBox>
 			</Container>
 		</>

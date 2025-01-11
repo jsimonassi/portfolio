@@ -12,6 +12,7 @@ export const Container = styled.div`
     color: ${props => props.theme.palette.surface3};
     border-radius: 16px;
     font-weight: bold;
+    transition: 0.5s;
 
     &:hover {
         cursor: pointer;
